@@ -1,31 +1,80 @@
+* {
+    box-sizing: border-box; /* padding/content/border included in total height/width */
+}
+
 body {
-    background-color: aliceblue;
+    background-color: rgb(184, 214, 226);
     display: flex;
     align-items: center;
     justify-content: center;
     height: 100vh;
+    width: 100vw;
+    margin: 0;
 }
 
 .calculator {
-    width: 50vh;
+    background-color: rgb(245, 245, 245);
+    border: 1px solid rgb(200, 200, 200);
+    border-radius: 1rem;
+    overflow: hidden; /* content of elements that would be in the rounded courners is hidden */
+    
 }
 
 .calculator__display {
     background-color: rgb(34, 34, 34);
     color: white;
     display: flex;
-    justify-content: right;
+    justify-content: flex-end;
     align-items: center;
-    height: 5vh;
+    padding: 1rem;
+    height: 10vh;
+    font-size: 3rem;
 }
 
 .calculator__keys {
-    display: flex;
-    flex-wrap: wrap;
+    width: 50vw;
+    height: 40vh;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns, 1fr = one fraction of remaining space -> 4 equal columns*/
+    grid-template-rows: repeat(5, 1fr);
 }
 
 button {
-    height: 5vh;
-    width: 5vh;
+    font-size: 2rem;
+    border: 1px solid rgb(200, 200, 200);
+    transition: background-color 0.2s ease; /* animation for hover */
+    cursor: pointer; /* change cursor when hovering over object */
 }
+
+.calculator__keys--signs {
+    background-color: rgb(230, 230, 230);
+    border-color: rgb(200, 200, 200);
+}
+
+.calculator__keys--signs:hover { /* applied when hovering over object */
+    background-color: rgb(205, 205, 205);
+}
+
+.calculator__keys--numbers {
+    background-color: rgb(245, 245, 245);
+    border-color: rgb(200, 200, 200);
+}
+
+.calculator__keys--numbers:hover {
+    background-color: rgb(220, 220, 220);
+}
+
+.calculator__keys--equals {
+    grid-row: 2 / span 4; /* start at row 2 span for 4 rows */
+    grid-column: 4;
+    background-color: rgb(255, 140, 78);
+}
+
+.calculator__keys--equals:hover {
+    background-color: rgb(230, 115, 53);
+}
+
+
+
+
 
